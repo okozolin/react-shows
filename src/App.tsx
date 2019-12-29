@@ -9,7 +9,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header></Header>
       <List></List>
-      <Tile></Tile>
+      <Tile name={"hello"} pic="aaa"></Tile>
     </div>
   );
 };

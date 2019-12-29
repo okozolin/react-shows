@@ -1,7 +1,9 @@
 import React from "react";
 
-interface Props {}
-
-export const Tile: React.FC<Props> = () => {
-  return <div>Tile</div>;
+interface ITileProps {
+  name: string;
+  pic: string;
+}
+export const Tile: React.FC<ITileProps> = ({ name, pic }) => {
+  return <div>{name}</div>;
 };
