@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React tutorial.
 
-Creatinh components, async requests etc
+Creating components, async requests etc
 
 ## Available Scripts
 
