@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Tile } from "../tile/Tile";
 
-interface Props {}
+interface Props {
+  
+}
 interface State {
   name: string;
   pic: string;
@@ -538,14 +540,14 @@ const shows: any[] = [
     }
   }
 ];
-// export const List: React.FC<Props> = () => {
-//   return <div>
-//     List
-//     <Tile name={"hello"} pic="aaa"></Tile>
-//     </div>;
-// };
+export const List: React.FC<Props> = () => {
+  return <div>
+    List
+    <Tile name={"hello"} pic="aaa"></Tile>
+    </div>;
+};
 
-// }
+}
 
 export default class List extends Component<Props, State> {
   state = {};
