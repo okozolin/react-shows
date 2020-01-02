@@ -2,6 +2,9 @@ import React, { ChangeEvent } from "react";
 import "./App.css";
 import { Header } from "./components/header/Header";
 import { List } from "./components/list/List";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Home } from "./routes/Home";
+import { Redirect } from "react-router";
 
 const mockShows: any[] = [
   {
@@ -557,10 +560,20 @@ class App extends React.Component<Props, State> {
   render() {
     const { q, shows } = this.state;
     return (
-      <div className="App">
-        <Header handleSearchChange={this.handleSearchChange} q={q}></Header>
-        <List shows={shows}></List>
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/home">
+              <Home
+                q={q}
+                shows={shows}
+                handleSearchChange={this.handleSearchChange}
+              />
+            </Route>
+            <Redirect to="/home" />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
