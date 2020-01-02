@@ -13,7 +13,11 @@ export const List: React.FC<Props> = ({ shows }) => {
         <div key={item.show.id}>
           <Tile
             name={item.show.name}
-            pic={item.show.image ? item.show.image.medium : ""}
+            pic={
+              item.show.image
+                ? item.show.image.medium
+                : "https://image.shutterstock.com/image-illustration/black-linear-photo-camera-logo-260nw-1412111903.jpg"
+            }
           ></Tile>
         </div>
       ))}
