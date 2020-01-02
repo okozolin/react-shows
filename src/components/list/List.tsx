@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./list.css";
 
 interface Props {
   shows: any;
@@ -6,7 +7,7 @@ interface Props {
 
 export const List: React.FC<Props> = ({ shows }) => {
   return (
-    <div>
+    <div className="list">
       {shows.map((item: any) => (
         <div key={item.show.id}> {item.show.name}</div>
       ))}

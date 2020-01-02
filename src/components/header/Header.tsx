@@ -1,4 +1,5 @@
 import React, { ReactElement, ChangeEvent } from "react";
+// import "./header.css";
 
 interface Props {
   q: string;
@@ -8,13 +9,15 @@ export function Header({ q, handleSearchChange }: Props): ReactElement {
   // export default Heade React.FC<Props> = ({q, handleSearchChange})  =>{
 
   return (
-    <div>
-      <input
-        type="search"
-        placeholder="Search"
-        value={q}
-        onChange={handleSearchChange}
-      />
+    <div className="header">
+      <div>
+        <input
+          type="search"
+          placeholder="Search"
+          value={q}
+          onChange={handleSearchChange}
+        />
+      </div>
     </div>
   );
 }

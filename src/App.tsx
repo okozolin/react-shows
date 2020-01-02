@@ -555,11 +555,11 @@ class App extends React.Component<Props, State> {
       });
   };
   render() {
-    const { q } = this.state;
+    const { q, shows } = this.state;
     return (
       <div className="App">
         <Header handleSearchChange={this.handleSearchChange} q={q}></Header>
-        <List shows={mockShows}></List>
+        <List shows={shows}></List>
       </div>
     );
   }
