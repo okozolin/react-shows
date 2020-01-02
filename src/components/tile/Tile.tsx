@@ -1,9 +1,16 @@
 import React from "react";
 
-interface ITileProps {
+interface Props {
   name: string;
   pic: string;
 }
-export const Tile: React.FC<ITileProps> = ({ name, pic }) => {
-  return <div>{name}</div>;
+export const Tile: React.FC<Props> = ({ name, pic }) => {
+  return (
+    <div>
+      <div>
+        <img src={pic} alt={name} />
+      </div>
+      <div>{name} </div>
+    </div>
+  );
 };
