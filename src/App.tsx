@@ -1,8 +1,7 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import "./App.css";
 import { Header } from "./components/header/Header";
 import { List } from "./components/list/List";
-import { prependOnceListener } from "cluster";
 
 const mockShows: any[] = [
   {
@@ -535,15 +534,25 @@ const mockShows: any[] = [
     }
   }
 ];
+interface Props {}
+interface State {
+  q: string;
+  shows: any;
+}
 class App extends React.Component<Props, State> {
-  // const App: React.FC = () => {
   state = {
-    q: ""
+    q: "",
+    shows: []
   };
 
-  handleSearchChange = (event: ChangeEvent<HTMLInputElemnt>) => {
+  handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value;
     this.setState({ q: query });
+    fetch(`http://api.tvmaze.com/search/shows?q=${query}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ shows: data });
+      });
   };
   render() {
     const { q } = this.state;

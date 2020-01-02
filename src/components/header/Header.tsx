@@ -4,7 +4,7 @@ interface Props {
   q: string;
   handleSearchChange(q: ChangeEvent<HTMLInputElement>): void;
 }
-export default function Heade({ q, handleSearchChange }: Props): ReactElement {
+export function Header({ q, handleSearchChange }: Props): ReactElement {
   // export default Heade React.FC<Props> = ({q, handleSearchChange})  =>{
 
   return (
