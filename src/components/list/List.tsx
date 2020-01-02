@@ -7,8 +7,8 @@ interface Props {
 export const List: React.FC<Props> = ({ shows }) => {
   return (
     <div>
-      {shows.map((show: any) => (
-        <div key={show.show.id}> {show.show.name}</div>
+      {shows.map((item: any) => (
+        <div key={item.show.id}> {item.show.name}</div>
       ))}
     </div>
   );
