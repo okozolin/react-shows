@@ -1,7 +1,5 @@
 import React, { ChangeEvent } from "react";
 import "./App.css";
-import { Header } from "./components/header/Header";
-import { List } from "./components/list/List";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { Redirect } from "react-router";
