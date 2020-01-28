@@ -3,6 +3,7 @@ import "./App.css";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { Redirect } from "react-router";
+import { Show } from "./routes/Show";
 
 interface Props {}
 interface State {
@@ -10,6 +11,7 @@ interface State {
   shows: any;
 }
 class App extends React.Component<Props, State> {
+  // state init
   state = {
     q: "",
     shows: []
@@ -36,6 +38,9 @@ class App extends React.Component<Props, State> {
                 shows={shows}
                 handleSearchChange={this.handleSearchChange}
               />
+            </Route>
+            <Route path="/shows/:id">
+              <Show />
             </Route>
             <Redirect to="/home" />
           </Switch>

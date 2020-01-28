@@ -1,0 +1,8 @@
+#details-container {
+    display: flex;
+}
+
+#details-text {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,17 +1,27 @@
 import React from "react";
 import "./tile.css";
+import { Link } from "react-router-dom";
 
 interface Props {
-  name: string;
-  pic: string;
+  show: any;
 }
-export const Tile: React.FC<Props> = ({ name, pic }) => {
+export const Tile: React.FC<Props> = ({ show }) => {
+  const { id, image, name } = show;
   return (
-    <div>
-      <div>
-        <img src={pic} alt={name} />
-      </div>
-      <div>{name} </div>
+    <div className="list__tile">
+      <Link to={`/shows/${id}`}>
+        <div>
+          <img
+            src={
+              image
+                ? image.medium
+                : "https://image.shutterstock.com/image-illustration/black-linear-photo-camera-logo-260nw-1412111903.jpg"
+            }
+            alt={name}
+          />
+        </div>
+        <div>{name} </div>
+      </Link>
     </div>
   );
 };
