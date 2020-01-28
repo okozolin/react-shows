@@ -4,6 +4,8 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { Redirect } from "react-router";
 import { Show } from "./routes/Show";
+import ShowCast from "./components/showCast/ShowCast";
+import ShowSeasons from "./components/showSeasons/ShowSeasons";
 
 interface Props {}
 interface State {
@@ -39,7 +41,7 @@ class App extends React.Component<Props, State> {
                 handleSearchChange={this.handleSearchChange}
               />
             </Route>
-            <Route path="/shows/:id">
+            <Route exact path="/shows/:id">
               <Show />
             </Route>
             <Redirect to="/home" />

@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ShowDetails } from "../components/showDetails/ShowDetails";
-import { useParams } from "react-router-dom";
+import {
+  useParams,
+  HashRouter,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import TabNav from "../components/tabNav/TabNav";
+import ShowSeasons from "../components/showSeasons/ShowSeasons";
+import ShowCast from "../components/showCast/ShowCast";
 
 interface Props {}
 
@@ -17,8 +26,23 @@ export const Show: React.FC<Props> = () => {
   }, [id]);
 
   return (
-    <div>
-      <ShowDetails show={show} />
-    </div>
+    <HashRouter basename={`/shows/${id}`}>
+      <div>
+        <ShowDetails show={show} />
+      </div>
+      <div>
+        <TabNav />
+        <Switch>
+          <Route exact path="/cast">
+            <ShowCast id={id} />
+          </Route>
+          <Route exact path="/seasons">
+            <ShowSeasons id={id} />
+          </Route>
+        </Switch>
+
+        {/* <Redirect to="/cast" /> */}
+      </div>
+    </HashRouter>
   );
 };
