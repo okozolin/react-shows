@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ShowDetails } from "../components/showDetails/ShowDetails";
 import {
   useParams,
-  HashRouter,
   Switch,
   Route,
   Redirect,
@@ -33,12 +32,12 @@ export const Show: React.FC<Props> = () => {
         <ShowDetails show={show} />
       </div>
       <div>
-        <TabNav />
+        <TabNav id={id} />
         <Switch>
-          <Route exact path="/cast">
+          <Route exact path={`/shows/${id}/cast`}>
             <ShowCast id={id} />
           </Route>
-          <Route exact path="/seasons">
+          <Route exact path={`/shows/${id}/season`}>
             <ShowSeasons id={id} />
           </Route>
         </Switch>

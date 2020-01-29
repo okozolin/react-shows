@@ -4,14 +4,9 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./routes/Home";
 import { Redirect } from "react-router";
 import { Show } from "./routes/Show";
-import ShowCast from "./components/showCast/ShowCast";
-import ShowSeasons from "./components/showSeasons/ShowSeasons";
+import { State } from "./interfaces/interfaces";
 
 interface Props {}
-interface State {
-  q: string;
-  shows: any;
-}
 class App extends React.Component<Props, State> {
   // state init
   state = {
