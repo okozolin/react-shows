@@ -5,7 +5,8 @@ import {
   HashRouter,
   Switch,
   Route,
-  Redirect
+  Redirect,
+  BrowserRouter
 } from "react-router-dom";
 import TabNav from "../components/tabNav/TabNav";
 import ShowSeasons from "../components/showSeasons/ShowSeasons";
@@ -26,7 +27,8 @@ export const Show: React.FC<Props> = () => {
   }, [id]);
 
   return (
-    <HashRouter basename={`/shows/${id}`}>
+    // <HashRouter basename={`/shows/${id}`}>
+    <BrowserRouter>
       <div>
         <ShowDetails show={show} />
       </div>
@@ -43,6 +45,6 @@ export const Show: React.FC<Props> = () => {
 
         {/* <Redirect to="/cast" /> */}
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };

@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function ShowCast({ id }: Props): ReactElement {
-  return <div>this is ast info {id}</div>;
+  return <div>this is Cast info {id}</div>;
 }
