@@ -26,7 +26,6 @@ export const Show: React.FC<Props> = () => {
   }, [id]);
 
   return (
-    // <HashRouter basename={`/shows/${id}`}>
     <BrowserRouter>
       <div>
         <ShowDetails show={show} />
@@ -34,11 +33,11 @@ export const Show: React.FC<Props> = () => {
       <div>
         <TabNav id={id} />
         <Switch>
-          <Route exact path={`/shows/${id}/cast`}>
-            <ShowCast id={id} />
+          <Route exact path="/shows/:id/cast">
+            <ShowCast />
           </Route>
-          <Route exact path={`/shows/${id}/season`}>
-            <ShowSeasons id={id} />
+          <Route exact path="/shows/:id/season">
+            <ShowSeasons />
           </Route>
         </Switch>
 

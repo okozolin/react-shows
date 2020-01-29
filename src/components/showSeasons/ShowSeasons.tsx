@@ -1,8 +1,10 @@
 import React from "react";
-import { Props } from "../../interfaces/interfaces";
+import { RouteComponentProps, withRouter } from "react-router-dom";
+import { TParams } from "../../interfaces/interfaces";
 
-const ShowSeasons: React.FC<Props> = ({ id }) => {
+const ShowSeasons = ({ match }: RouteComponentProps<TParams>) => {
+  const { id } = match.params;
   return <div>here is Sesons info {id}</div>;
 };
 
-export default ShowSeasons;
+export default withRouter(ShowSeasons);
