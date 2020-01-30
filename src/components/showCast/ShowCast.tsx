@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps, withRouter } from "react-router-dom";
 import { TParams } from "../../interfaces/interfaces";
+import "./showCast.css";
 
 const ShowCast = ({ match }: RouteComponentProps<TParams>) => {
   const { id } = match.params;
@@ -16,7 +17,8 @@ const ShowCast = ({ match }: RouteComponentProps<TParams>) => {
 
   return (
     <div className="tab__content">
-      {id && cast && cast.length > 0
+      {/* {id && <div>this is Cast info {id}</div>} */}
+      {cast && cast.length > 0
         ? cast.map((item: any) => (
             <div className="cast__person" key={item.person.id}>
               {item.person.image && (
