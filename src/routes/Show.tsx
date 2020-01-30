@@ -20,7 +20,6 @@ export const Show: React.FC<Props> = () => {
     fetch(`http://api.tvmaze.com/shows/${id}`)
       .then(res => res.json())
       .then(data => {
-        console.log("data", data);
         setShow(data);
       });
   }, [id]);
